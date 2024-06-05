@@ -17,10 +17,8 @@ function App() {
   const pesoNum = parseFloat(peso.replace(',', '.'));
   const alturaNum = parseFloat(altura.replace(',', '.'));
 
-
- 
-
-    const imcValue = pesoNum / (alturaNum * alturaNum)
+ const imcValue = pesoNum / (alturaNum * alturaNum)
+    
 if(imcValue < 18.49){
   setImcCategory("abaixo do normal")
 } else if(imcValue > 19 && imcValue < 25){
@@ -37,7 +35,6 @@ if(imcValue < 18.49){
     setImc(imcValue.toFixed(2))
   }
 
-
   return (
   
     <div className="App">
@@ -48,8 +45,6 @@ if(imcValue < 18.49){
       <label>Peso</label>
       <input type="text" placeholder="ex:.69,2" value={peso} onChange={(e) => setPeso(e.target.value)}/>
       <button onClick={calcImc}>CALCULAR IMC</button>
-
- 
  </div>
  <Resultados imc={imc} imcCategory={imcCategory} />
  <Sobre />
